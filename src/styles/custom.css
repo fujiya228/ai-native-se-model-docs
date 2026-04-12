@@ -1,1 +1,46 @@
 /* AI-Native SE Model - Custom Styles */
+
+/* --- Mermaid 図のクリック拡大モーダル --- */
+.mermaid {
+	cursor: zoom-in;
+	transition: opacity 0.2s;
+}
+
+/* モーダルオーバーレイ */
+.mermaid-modal-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.85);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: zoom-out;
+	padding: 2rem;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.mermaid-modal-overlay.is-visible {
+	opacity: 1;
+}
+
+.mermaid-modal-overlay svg {
+	max-width: 95vw;
+	max-height: 90vh;
+	filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
+	background: var(--sl-color-bg);
+	border-radius: 8px;
+	padding: 1.5rem;
+}
+
+/* モーダル内の閉じるヒント */
+.mermaid-modal-hint {
+	position: fixed;
+	top: 1rem;
+	right: 1.5rem;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.85rem;
+	pointer-events: none;
+	z-index: 10000;
+}

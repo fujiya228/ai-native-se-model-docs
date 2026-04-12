@@ -26,6 +26,50 @@ export default defineConfig({
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/fujiya228/ai-native-se-model-docs' },
 			],
 			customCss: ['./src/styles/custom.css'],
+			head: [
+				{
+					tag: 'script',
+					content: `
+						document.addEventListener('DOMContentLoaded', () => {
+							function initMermaidZoom() {
+								document.querySelectorAll('.mermaid').forEach((el) => {
+									if (el.dataset.zoomReady) return;
+									el.dataset.zoomReady = 'true';
+									el.addEventListener('click', () => {
+										const svg = el.querySelector('svg');
+										if (!svg) return;
+										const overlay = document.createElement('div');
+										overlay.className = 'mermaid-modal-overlay';
+										const hint = document.createElement('div');
+										hint.className = 'mermaid-modal-hint';
+										hint.textContent = 'Click to close';
+										const clone = svg.cloneNode(true);
+										clone.removeAttribute('style');
+										overlay.appendChild(clone);
+										overlay.appendChild(hint);
+										document.body.appendChild(overlay);
+										requestAnimationFrame(() => overlay.classList.add('is-visible'));
+										overlay.addEventListener('click', () => {
+											overlay.classList.remove('is-visible');
+											overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+										});
+										document.addEventListener('keydown', function esc(e) {
+											if (e.key === 'Escape') {
+												overlay.classList.remove('is-visible');
+												overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+												document.removeEventListener('keydown', esc);
+											}
+										});
+									});
+								});
+							}
+							const observer = new MutationObserver(() => initMermaidZoom());
+							observer.observe(document.body, { childList: true, subtree: true });
+							initMermaidZoom();
+						});
+					`,
+				},
+			],
 			sidebar: [
 				{
 					label: '導入',

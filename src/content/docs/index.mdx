@@ -1,40 +1,77 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: AI-Native Software Engineering Model
+description: AIエージェントとの協働を前提としたソフトウェア開発ライフサイクルの参照モデル
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: AIエージェントとの協働を前提としたソフトウェア開発ライフサイクルの参照モデル
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: ドキュメントを読む
+      link: /introduction/why-this-model/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: 適用例を見る
+      link: /instances/how-to-read/
+      icon: right-arrow
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Next steps
+## 3つの入口
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+<CardGrid>
+  <Card title="理解する" icon="open-book">
+    このモデルの背景と基礎概念を学ぶ。なぜ既存のフレームワークでは不十分なのか、AIネイティブなソフトウェアエンジニアリングとは何かを理解する。
+
+    <LinkCard title="なぜこのモデルが必要か" href="/introduction/why-this-model/" />
+    <LinkCard title="このモデルでできること" href="/introduction/what-you-can-do/" />
+    <LinkCard title="基盤モデルの概要" href="/foundation/base-model/" />
+  </Card>
+  <Card title="設計する" icon="setting">
+    ライフサイクル・実行設計・ビューを使ってワークフローを設計する。9段階のライフサイクル定義、実行主体と責任主体の分離、8つのビューによる多面的な分析が可能である。
+
+    <LinkCard title="ライフサイクル 9段階" href="/lifecycle/nine-stages/" />
+    <LinkCard title="実行主体と責任主体" href="/execution/actor-and-responsibility/" />
+    <LinkCard title="ビュー体系" href="/views/overview/" />
+  </Card>
+  <Card title="適用する" icon="rocket">
+    具体的な適用例と動力学で実践する。変換モードインスタンスを通じてモデルの使い方を学び、ボトルネック移動の動力学で継続的な改善を設計する。
+
+    <LinkCard title="インスタンスの読み方" href="/instances/how-to-read/" />
+    <LinkCard title="Implementation インスタンス" href="/instances/implementation/" />
+    <LinkCard title="動力学：なぜ必要か" href="/dynamics/why-dynamics/" />
+  </Card>
+</CardGrid>
+
+## 想定読者別ガイド
+
+<CardGrid>
+  <Card title="ソフトウェアエンジニア（AI導入検討中）" icon="laptop">
+    AIエージェントの導入を検討しているエンジニア向け。まず全体像を掴み、具体的な変換モードとインスタンスで実践イメージを得る。
+
+    1. [なぜこのモデルが必要か](/introduction/why-this-model/)
+    2. [3つの変換モード](/foundation/three-modes/)
+    3. [インスタンスの読み方](/instances/how-to-read/)
+  </Card>
+  <Card title="テックリード / EM" icon="list-format">
+    チームへのAI導入を設計・推進する立場の方向け。ライフサイクル全体の設計と、実行主体・責任主体の分離、ビューによる多角的分析を活用する。
+
+    1. [なぜこのモデルが必要か](/introduction/why-this-model/)
+    2. [ライフサイクル 9段階](/lifecycle/nine-stages/)
+    3. [実行主体と責任主体](/execution/actor-and-responsibility/)
+    4. [ビュー体系](/views/overview/)
+  </Card>
+  <Card title="AIツール開発者" icon="puzzle">
+    AIエージェントやオーケストレーターを開発する方向け。ライフサイクルの各段階で求められる制御環境の設計を理解する。
+
+    1. [なぜこのモデルが必要か](/introduction/why-this-model/)
+    2. [ライフサイクル 9段階](/lifecycle/nine-stages/)
+    3. [制御環境ビュー](/views/view-5-control/)
+  </Card>
+  <Card title="研究者" icon="document">
+    AIとソフトウェアエンジニアリングの交差領域を研究する方向け。モデルの導出過程を含め、最初から順に読むことを推奨する。
+
+    1. [なぜこのモデルが必要か](/introduction/why-this-model/)
+    2. [読み方ガイド](/introduction/reading-guide/)
+    3. [既存フレームワーク整理](/appendix/existing-frameworks/)
+  </Card>
 </CardGrid>

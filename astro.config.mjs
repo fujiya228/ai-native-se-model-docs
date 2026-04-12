@@ -3,15 +3,17 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
 import starlightLinksValidator from 'starlight-links-validator';
+import { rehypeBaseLinks } from './plugins/rehype-base-links.mjs';
+
+const basePath = '/ai-native-se-model-docs';
 
 // https://astro.build/config
 export default defineConfig({
-	site: process.env.CI
-		? 'https://fujiya228.github.io/ai-native-se-model-docs'
-		: undefined,
-	base: process.env.CI
-		? '/ai-native-se-model-docs'
-		: undefined,
+	site: 'https://fujiya228.github.io/ai-native-se-model-docs',
+	base: basePath,
+	markdown: {
+		rehypePlugins: [[rehypeBaseLinks, { base: basePath }]],
+	},
 	integrations: [
 		mermaid({
 			// CLAUDE.md のカラーテーマ規約で %%{init}%% により base テーマを指定するため、
@@ -23,9 +25,10 @@ export default defineConfig({
 		starlight({
 			title: 'AI-Native SE Model',
 			plugins: [
-				// CI（GitHub Pages ビルド）では base パスが付くためリンクバリデータと衝突する。
-				// ローカルビルド時のみ検証を実行する。
-				...(!process.env.CI ? [starlightLinksValidator()] : []),
+				// Note: starlight-links-validator は base パス（/ai-native-se-model-docs）設定時に
+				// 内部リンクを誤検知するため、base パスの非互換が解消されるまで無効化。
+				// 参照: https://github.com/fujiya228/ai-native-se-model-docs/issues/29
+				// starlightLinksValidator(),
 			],
 			locales: {
 				root: { label: '日本語', lang: 'ja' },

@@ -38,7 +38,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 ## 依存関係の全体像
 
-以下の図は、L1間の主要な依存関係の流れを示す。実線は順方向の依存（producer-consumer / gate）、破線はフィードバックループ（逆方向の依存）を表す。
+以下の図は、高優先L1（Specification〜Learn & Improve）間の主要な依存関係の流れを示す。Discovery と Framing は粗め扱いのため省略しているが、Learn & Improve から Discovery へのフィードバックループは記載している。実線は順方向の依存（producer-consumer / gate）、破線はフィードバックループ（逆方向の依存）を表す。
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'lineColor': '#6b7280', 'edgeLabelBackground': '#ffffff'}}}%%
@@ -63,7 +63,7 @@ flowchart TD
 
 ### Specification → Design
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Specification.受け入れ条件の定義 | Design.方式選定 | producer-consumer | 受け入れ条件が明文化されている | 不明確なら差し戻し |
 | Specification.非機能要求の整理 | Design.方式選定 | producer-consumer | 性能・安全の制約が定義されている | 非機能が曖昧だと方式選定が発散 |
@@ -71,35 +71,35 @@ flowchart TD
 
 ### Design → Decomposition
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Design.責務・境界設計 | Decomposition.変更単位の分解 | producer-consumer | 境界が定義されている | 境界未定だと分解が不安定 |
 | Design.実装・検証方針の設計 | Decomposition.実行順序の整理 | producer-consumer | 実装方針がある | — |
 
 ### Decomposition → Implementation
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Decomposition.実行計画の作成 | Implementation.文脈収集 | producer-consumer | 対象タスクが選ばれている | — |
 | Decomposition.依存関係の特定 | Implementation.変更実装 | producer-consumer | 待ち条件が明示されている | 未特定だと並行実装で競合 |
 
 ### Implementation → Verification & Review
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Implementation.ローカル整合確認 | Verification.自動検証 | gate | ローカルCIが通過している | ローカル未通過で提出するとCI失敗が増える |
 | Implementation.テスト作成・更新 | Verification.自動検証 | producer-consumer | テストが追加されている | テストなしだと自動検証の網が粗くなる |
 
 ### Verification & Review → Release & Operate
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Verification.修正反映確認 | Release.統合準備 | gate | 承認状態である | — |
 | Verification.自動検証 | Release.デプロイ・反映 | gate | CI全通過 | テスト通過がデプロイの前提 |
 
 ### Release & Operate → Learn & Improve
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Release.監視・運用・初動復旧 | Learn.結果計測 | producer-consumer | 運用データが蓄積されている | — |
 
@@ -107,7 +107,7 @@ flowchart TD
 
 順方向だけでなく、逆方向にも重要な依存が存在する。これらはライフサイクルの改善サイクルを形成する。
 
-| from | to | 型 | 条件 | 備考 |
+| 依存元 | 依存先 | 型 | 条件 | 備考 |
 |---|---|---|---|---|
 | Verification.差し戻し判断 | Implementation.変更実装 | producer-consumer | 修正方針が決まっている | 最も頻度の高い差し戻し |
 | Verification.差し戻し判断 | Design.責務・境界設計 | producer-consumer | 設計レベルの問題が検出された | 頻度は低いが影響大 |

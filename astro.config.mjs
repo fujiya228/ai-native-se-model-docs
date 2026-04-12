@@ -7,9 +7,8 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'AI-Native SE Model',
-			defaultLocale: 'ja',
 			locales: {
-				ja: { label: '日本語' },
+				root: { label: '日本語', lang: 'ja' },
 			},
 			editLink: {
 				baseUrl: 'https://github.com/fujiya228/ai-native-se-model-docs/edit/main/',

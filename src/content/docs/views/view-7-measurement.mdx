@@ -1,7 +1,108 @@
 ---
 title: "View 7: 測定ビュー"
+description: "設計の良し悪しを改善余地と影響の観点から観測するビュー。何を測り、どこで異常を検知するかを定義する。"
 sidebar:
   order: 9
 ---
 
-(準備中)
+import { Aside } from '@astrojs/starlight/components';
+
+## 目的
+
+設計が良いかどうかを**改善余地と影響の観点から観測**する。何を測り、どこで異常を検知するかを定義する。
+
+## メタ定義
+
+| メタ項目 | 定義 |
+|---|---|
+| **目的** | 設計が良いかどうかを改善余地と影響の観点から観測する。何を測り、どこで異常を検知するかを定義する |
+| **主語** | ステップまたは受け渡し |
+| **最小記述単位** | 指標単位（どのL1/L2に紐づく指標か） |
+| **記述項目** | metric（指標名）、observation_point（どこで測るか）、target（目標値または許容範囲）、risk_signal（異常を示す信号） |
+| **停止基準** | 追加しても**意思決定が変わらない**なら十分 |
+| **ライフサイクルとの対応** | L1/L2ステップまたはステップ間の受け渡しに紐づく |
+| **いつ使うか** | パフォーマンス改善時、AI導入前後の比較時、ボトルネック特定時 |
+
+## 指標の分類
+
+### フロー指標
+
+仕事の流れの速さと効率を測る指標。
+
+| 指標 | 何を測るか | 観測点の例 |
+|---|---|---|
+| **Lead Time** | 着手からリリースまでの所要時間 | Framing → Release |
+| **Queue / Wait Time** | 次のステップに進むまでの待ち時間 | Implementation → Verification の間 |
+| **Cycle Time** | 1サイクル（実装→検証→リリース）の所要時間 | Implementation → Release |
+
+### 品質指標
+
+仕事の品質と正しさを測る指標。
+
+| 指標 | 何を測るか | 観測点の例 |
+|---|---|---|
+| **Review Load** | レビュアーあたりの負荷 | Verification & Review |
+| **Rework Rate** | 差し戻しの発生率 | Verification → Implementation の差し戻し |
+| **Change Failure Rate** | リリース後に問題が発生する割合 | Release → Monitoring & Ops |
+
+### リスク指標
+
+問題発生時の影響と復旧を測る指標。
+
+| 指標 | 何を測るか | 観測点の例 |
+|---|---|---|
+| **Blast Radius** | 障害影響の範囲 | Release、Monitoring & Ops |
+| **Reversibility** | ロールバックの容易さ | Release |
+| **Failure Detection Time** | 問題検知までの時間 | Monitoring & Ops |
+| **Rollback Cost** | 復旧に要するコスト（時間・影響） | Monitoring & Ops |
+
+### 監査指標
+
+説明責任と追跡可能性を測る指標。
+
+| 指標 | 何を測るか | 観測点の例 |
+|---|---|---|
+| **Audit Cost** | 変更の経緯を追跡するコスト | 全ステップ |
+
+## 記述例
+
+| metric | observation_point | target | risk_signal |
+|---|---|---|---|
+| Lead Time | Framing → Release | 1週間以内 | 2週間を超える |
+| Review Wait Time | Implementation → Verification | 4時間以内 | 1営業日を超える |
+| Rework Rate | Verification → Implementation | 20%以下 | 40%を超える |
+| Change Failure Rate | Release → Monitoring | 5%以下 | 15%を超える |
+| Failure Detection Time | Monitoring & Ops | 15分以内 | 1時間を超える |
+
+<Aside type="tip">
+target と risk_signal は絶対値ではなく、チームやプロダクトのコンテキストに合わせて設定する。重要なのは「何を測るか」と「何が異常信号か」を事前に定義しておくことである。
+</Aside>
+
+## AIネイティブ文脈での重要性
+
+「実装が速くなったか」だけでなく、AI導入の副作用を観測する必要がある。
+
+| 問い | 対応する指標 | なぜ重要か |
+|---|---|---|
+| レビュー負荷はどこに移ったか？ | Review Load、Queue Time | [Transformer ファセット](/execution/ai-four-facets/#transformer変容者)による構造変化を検知する |
+| 復旧しやすいか？ | Reversibility、Rollback Cost | AI生成コードのロールバック設計を評価する |
+| 障害影響が大きくなっていないか？ | Blast Radius、Change Failure Rate | AI導入による変更頻度増加のリスクを監視する |
+| 差し戻しは減っているか？ | Rework Rate | AI実行品質の経時的な改善を追跡する |
+
+## 他のビューとの関係
+
+| ビュー | 測定ビューとの関係 |
+|---|---|
+| [ライフサイクルビュー](/views/view-1-lifecycle/) | 各ステップに指標を紐づける |
+| [依存関係ビュー](/views/view-4-dependency/) | 待ち時間やキュー長の測定根拠になる |
+| [As-Is / To-Beビュー](/views/view-8-asis-tobe/) | 実測値をTo-Beとの比較に使う |
+
+## model/ との対応
+
+このページの内容は以下のモデルファイルに基づいている。
+
+| セクション | 対応ファイル | 対応箇所 |
+|---|---|---|
+| メタ定義 | `model/06_views.md` | 「View 7: 測定ビュー」セクション |
+| 指標例 | `model/06_views.md` | 「指標例」セクション |
+| AIネイティブ文脈の重要性 | `model/06_views.md` | 「AIネイティブ文脈での重要性」セクション |

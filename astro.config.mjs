@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
+import starlightLinksValidator from 'starlight-links-validator';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
 		}),
 		starlight({
 			title: 'AI-Native SE Model',
+			plugins: [starlightLinksValidator()],
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
 			},

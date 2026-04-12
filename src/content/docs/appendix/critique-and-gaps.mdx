@@ -1,7 +1,100 @@
 ---
 title: "自己批評と未解決論点"
+description: "本モデルのv1としての強さと限界、対処済みの問題、残存する問題、未解決の論点を正直に記述する。"
 sidebar:
   order: 4
 ---
 
-(準備中)
+import { Aside } from '@astrojs/starlight/components';
+
+## なぜ自己批評を公開するか
+
+モデルの最終形だけを提示すると、その限界や暗黙の前提が見えにくくなる。自己批評を公開することで、読者がモデルの適用範囲を正しく判断し、改善に参加できるようにする。
+
+## v1 の強さ
+
+| 強い点 | 根拠 |
+|---|---|
+| ライフサイクル + 設計属性 + ビューの3層構造が定義されている | [基底モデル](/foundation/base-model/) + [8つのビュー](/views/overview/) |
+| L2の分解・停止原則が明示されている | [L2分解の原則](/appendix/l2-principles/) |
+| テーラリングの余地が設計に組み込まれている | 参照モデルとしての性格。[モデルの性格と3つの使い方](/foundation/three-modes/) |
+| 理論的基盤が明示されている | [既存フレームワーク](/appendix/existing-frameworks/)と[導出過程](/appendix/derivation-process/) |
+| 具体的な適用例がある | [Implementation](/instances/implementation/)と[Verification & Review](/instances/verification-review/)の変換モードインスタンス |
+| 動力学の概念枠組みがある | [ボトルネック移動パターン](/dynamics/bottleneck-patterns/)、[フロー変数](/dynamics/flow-variables/) |
+| AIの多面性が整理されている | [4ファセット](/execution/ai-four-facets/)（Executor / Evaluator / Transformer / Mediator） |
+
+## 対処済みの問題
+
+以前の批評で指摘された問題のうち、v1で対処済みのもの。
+
+| 旧指摘 | 対処 |
+|---|---|
+| 概念の導出過程が書かれていない | [概念の導出過程](/appendix/derivation-process/)として記録 |
+| 依存関係の型が未明示 | [依存関係ビュー](/views/view-4-dependency/)で4型を定義 |
+| L2の分解基準が不明 | [L2分解の原則](/appendix/l2-principles/)で分割・停止原則を定義 |
+| ビューの定義が曖昧 | [8つのビュー](/views/overview/)でメタ定義（7項目）を整備 |
+| 記述モデルと処方モデルの混在 | [モデルの性格と3つの使い方](/foundation/three-modes/)で3つのモードを定義 |
+| AIを実行主体としてのみ見る危険 | [AIの4ファセット](/execution/ai-four-facets/)で多面性を整理 |
+| 動力学モデルが未着手 | [動力学セクション](/dynamics/why-dynamics/)で概念枠組みを定義 |
+
+## 残存する問題
+
+### 1. 測定ビューが枠だけで中身が薄い
+
+[測定ビュー](/views/view-7-measurement/)のメタ定義と[フロー変数](/dynamics/flow-variables/)は定義済みだが、L1/L2ごとの具体的な指標セットやAI導入前後の比較テンプレートは未定義。
+
+**深刻度: 中。** 参照モデルとしては枠組みで十分だが、チームが測定を始めるためのテンプレートが不足する。
+
+### 2. 適用例が2つのL1に限られる
+
+Implementation と Verification & Review の変換モードインスタンスは作成済みだが、他のL1（Design、Release & Operate、Specification等）への展開は未着手。
+
+**深刻度: 中。** 特に Release & Operate は[ボトルネック移動パターン2](/dynamics/bottleneck-patterns/#パターン2-verification--release-移動)の対処設計として重要。
+
+### 3. BPMN的な厳密化が未着手
+
+協調様式の詳細化（gateway、boundary event、timeout、escalation等）は未着手。現在の協調設計は「属性」として定義されているが、フロー制御としての厳密化はされていない。
+
+**深刻度: 低（v1スコープ外）。**
+
+## 未解決の論点
+
+### Object をどこまで明示的に扱うか
+
+[基底モデル](/foundation/base-model/)の7要素の一つである Object（対象）を、各ステップでどの粒度で記述するか。outcome との切り分けも未整理。
+
+### RACI と RAPID の使い分けの指針
+
+[RACIと裁量レベル](/execution/raci-and-discretion/#rapid-との使い分け)で方向性は示したが、具体的にどのステップで RAPID を使うべきかの詳細な指針は未定義。
+
+### 情報アクセシビリティの扱い
+
+裁量委譲の前提条件として「エージェントがアクセスできる情報」を明示的に扱う必要がある。現在のモデルでは[制御環境ビュー](/views/view-5-control/)の permission/policy として間接的に触れるのみ。
+
+### 定量的シミュレーション
+
+[動力学セクション](/dynamics/why-dynamics/)は概念枠組みと分析パターンを提供するが、離散イベントシミュレーション等による定量分析はv2以降の課題。
+
+## 今後の方向性
+
+| 優先度 | 方向性 |
+|---|---|
+| **高** | 他L1への適用例展開（Design、Release & Operate） |
+| **高** | 測定ビューの指標テンプレート作成 |
+| **中** | 情報アクセシビリティの設計変数化 |
+| **低** | BPMN的な厳密化 |
+| **低** | 定量的シミュレーション（v2以降） |
+
+<Aside>
+本モデルは「完成品」ではなく「v1」である。適用しながら育てることを前提としている。批判や改善提案は歓迎する。
+</Aside>
+
+## model/ との対応
+
+このページの内容は以下のモデルファイルに基づいている。
+
+| セクション | 対応ファイル | 対応箇所 |
+|---|---|---|
+| 対処済みの問題・残存する問題 | `model/07_critique_and_gaps.md` | 全セクション |
+| 未解決の論点 | `model/09_open_questions_and_next_steps.md` | 「未解決論点」セクション |
+| 今後の方向性 | `model/09_open_questions_and_next_steps.md` | 「次にやるべきこと」セクション |

@@ -1,10 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
+		mermaid({
+			// CLAUDE.md のカラーテーマ規約で %%{init}%% により base テーマを指定するため、
+			// デフォルトテーマは base にしておく
+			theme: 'base',
+			// Starlight のダーク/ライトモード切替に対応
+			autoTheme: true,
+		}),
 		starlight({
 			title: 'AI-Native SE Model',
 			locales: {

@@ -6,6 +6,12 @@ import starlightLinksValidator from 'starlight-links-validator';
 
 // https://astro.build/config
 export default defineConfig({
+	site: process.env.CI
+		? 'https://fujiya228.github.io/ai-native-se-model-docs'
+		: undefined,
+	base: process.env.CI
+		? '/ai-native-se-model-docs'
+		: undefined,
 	integrations: [
 		mermaid({
 			// CLAUDE.md のカラーテーマ規約で %%{init}%% により base テーマを指定するため、
@@ -16,7 +22,11 @@ export default defineConfig({
 		}),
 		starlight({
 			title: 'AI-Native SE Model',
-			plugins: [starlightLinksValidator()],
+			plugins: [
+				// CI（GitHub Pages ビルド）では base パスが付くためリンクバリデータと衝突する。
+				// ローカルビルド時のみ検証を実行する。
+				...(!process.env.CI ? [starlightLinksValidator()] : []),
+			],
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
 			},

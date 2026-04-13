@@ -2,7 +2,7 @@
 title: "読み方ガイド"
 description: "読者の役割・関心に応じた推奨読書ルートを示す。全部を読む必要はない。自分に関係のある部分から始めればよい。"
 sidebar:
-  order: 3
+  order: 4
 ---
 
 import { Aside, Card } from '@astrojs/starlight/components';
@@ -35,7 +35,7 @@ import { Aside, Card } from '@astrojs/starlight/components';
 日常の開発作業でAIエージェントをどう活用するか、どこまで任せてどこで自分が判断するかを知りたい人向け。
 
 <Card title="推奨ルート">
-1. **導入** — [なぜこのモデルが必要か](/introduction/why-this-model/) で全体像を把握
+1. **導入** — [このモデルが目指すこと](/introduction/model-goals/) で全体像を把握
 2. **基礎概念** — [基底モデル](/foundation/base-model/) と [3つの使い方](/foundation/three-modes/) で語彙を押さえる
 3. **実行設計** — [RACIと裁量レベル](/execution/raci-and-discretion/) で「どこまで任せるか」の設計方法を理解する
 4. **適用例** — [Implementation: 変換モード](/instances/implementation/) で具体的なAI導入設計を見る
@@ -50,7 +50,7 @@ import { Aside, Card } from '@astrojs/starlight/components';
 チームの開発ワークフロー全体を見渡し、AIエージェント導入の計画を立てたい人向け。
 
 <Card title="推奨ルート">
-1. **導入** — [なぜこのモデルが必要か](/introduction/why-this-model/) と [このモデルでできること](/introduction/what-you-can-do/) で全体像を把握
+1. **導入** — [このモデルが目指すこと](/introduction/model-goals/) と [このモデルでできること](/introduction/what-you-can-do/) で全体像を把握
 2. **基礎概念** — [6つの設計属性](/foundation/design-attributes/) で各段階に何を定義すべきかを理解する
 3. **ライフサイクル** — [9段階のライフサイクル](/lifecycle/nine-stages/) と [依存関係マップ](/lifecycle/dependency-map/) でワークフロー全体を構造化する
 4. **ビュー体系** — [View 8: As-Is / To-Be / Validation](/views/view-8-asis-tobe/) でAI導入前後の差分設計の方法を学ぶ
@@ -67,7 +67,7 @@ import { Aside, Card } from '@astrojs/starlight/components';
 AIエージェントのオーケストレーター、開発支援ツール、CI/CDパイプラインなどを設計・開発する人向け。
 
 <Card title="推奨ルート">
-1. **導入** — [なぜこのモデルが必要か](/introduction/why-this-model/) で問題設定を把握
+1. **導入** — [このモデルが目指すこと](/introduction/model-goals/) で問題設定を把握
 2. **基礎概念** — [基底モデル](/foundation/base-model/) の7要素と [モデルの性格](/foundation/model-character/) でモデルの設計原則を理解する
 3. **実行設計** — [実行主体と責任主体](/execution/actor-and-responsibility/) と [AIの多面性](/execution/ai-four-facets/) でAIの位置づけを押さえる
 4. **ビュー体系** — [View 5: 制御環境ビュー](/views/view-5-control/) と [View 6: レイヤービュー](/views/view-6-layer/) でツールが担うべき制御と構造を理解する
@@ -83,9 +83,9 @@ AIエージェントのオーケストレーター、開発支援ツール、CI/
 AIネイティブなソフトウェアエンジニアリングの理論的な基盤や、既存研究との関係を知りたい人向け。
 
 <Card title="推奨ルート">
-1. **導入** — [なぜこのモデルが必要か](/introduction/why-this-model/) で問題設定と既存フレームワークの位置づけを把握
+1. **導入** — [このモデルが目指すこと](/introduction/model-goals/) で問題設定と既存フレームワークの位置づけを把握
 2. **基礎概念** — 全ページを順に読み、モデルの構造と設計原則を理解する
-3. **付録** — [既存フレームワークとの関係](/appendix/existing-frameworks/) で BPMN, VSM, Coordination Theory 等との関係を確認する
+3. **付録** — [既存フレームワークの全体像](/appendix/existing-landscape/) で BPMN, VSM, Coordination Theory 等との関係を確認する
 4. **付録** — [概念の導出過程](/appendix/derivation-process/) でモデルがどう導出されたかの過程を追う
 5. **ビュー体系** — 全8ビューの定義を通読し、モデルの表現力を評価する
 6. **動力学** — [理論的基盤](/dynamics/theoretical-foundations/) でToC, リトルの法則等との接続を確認する
@@ -102,7 +102,7 @@ AIネイティブなソフトウェアエンジニアリングの理論的な基
 
 | 知りたいこと | 読むべきページ |
 |---|---|
-| モデルの全体像を素早く掴みたい | [なぜこのモデルが必要か](/introduction/why-this-model/) → [このモデルでできること](/introduction/what-you-can-do/) |
+| モデルの全体像を素早く掴みたい | [このモデルが目指すこと](/introduction/model-goals/) → [このモデルでできること](/introduction/what-you-can-do/) |
 | ライフサイクルの9段階を知りたい | [9段階のライフサイクル](/lifecycle/nine-stages/) |
 | 「どこまでAIに任せるか」の設計方法を知りたい | [RACIと裁量レベル](/execution/raci-and-discretion/) |
 | ビューとは何かを知りたい | [なぜ複数ビューが必要か](/views/why-multiple-views/) → [8つのビューの概要](/views/overview/) |

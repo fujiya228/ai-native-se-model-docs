@@ -89,7 +89,7 @@ export default defineConfig({
 				{
 					label: '導入',
 					items: [
-						{ label: 'なぜこのモデルが必要か', slug: 'introduction/why-this-model' },
+						{ label: 'このモデルが目指すこと', slug: 'introduction/model-goals' },
 						{ label: 'このモデルでできること', slug: 'introduction/what-you-can-do' },
 						{ label: '読み方ガイド', slug: 'introduction/reading-guide' },
 					],
@@ -156,7 +156,7 @@ export default defineConfig({
 				{
 					label: '付録',
 					items: [
-						{ label: '既存フレームワークとの関係', slug: 'appendix/existing-frameworks' },
+						{ label: '既存フレームワークの全体像', slug: 'appendix/existing-landscape' },
 						{ label: '概念の導出過程', slug: 'appendix/derivation-process' },
 						{ label: 'L2分解の原則', slug: 'appendix/l2-principles' },
 						{ label: '自己批評と未解決論点', slug: 'appendix/critique-and-gaps' },

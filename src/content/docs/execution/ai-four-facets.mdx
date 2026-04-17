@@ -1,6 +1,6 @@
 ---
-title: "AIの多面性: 4つのファセット"
-description: "AIを「実行主体」としてのみ見る限界を超え、Executor・Evaluator・Transformer・Mediatorの4つのファセットでAIの多面的な役割を整理する。"
+title: "AIの多面性"
+description: "AIを「実行主体」としてのみ見る限界を超え、Executor・Evaluator・Transformer・MediatorのファセットでAIの多面的な役割を整理する。"
 sidebar:
   order: 3
 ---
@@ -30,9 +30,9 @@ import { Aside } from '@astrojs/starlight/components';
 - **適用時** — 「AIがコードを書く」と「AIがlint失敗を分析して修正する」を区別できない
 - **マチュリティ判断時** — 実行の移譲と検証の移譲が同じLLMで起きるケースへの対処が不明
 
-## 4つのファセット
+## ファセット
 
-AIが[基底モデルの7要素](/foundation/base-model/)にどう関与するかを分析すると、4つの異なるファセット（顔）が浮かび上がる。
+AIが[基底モデルの要素](/foundation/base-model/)にどう関与するかを分析すると、異なるファセット（顔）が浮かび上がる。
 
 ### Executor（実行者）
 
@@ -82,9 +82,9 @@ Transformer は意図的に設計するものではなく、Executor や Evaluat
 
 AI が Artifact の生成・消費パターンそのものを変える。AI生成PRは変更量が均一になりやすく、人間が書くPRとは粒度やスタイルが異なる。この違いを無視すると、後工程（レビュー、テスト）の設計が現実とずれる。
 
-## 4ファセットの全体像
+## ファセットの全体像
 
-4つのファセットは独立ではなく、同一のLLM技術基盤の上に成立する。同じLLMインスタンスが同時に複数のファセットを持ちうる。
+ファセットは独立ではなく、同一のLLM技術基盤の上に成立する。同じLLMインスタンスが同時に複数のファセットを持ちうる。
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'lineColor': '#6b7280', 'edgeLabelBackground': '#ffffff'}}}%%
@@ -145,7 +145,7 @@ graph TB
 
 ## インスタンス化時のチェックリスト
 
-ライフサイクルの各ステップにAIを導入する際、以下の4つの問いを確認する。
+ライフサイクルの各ステップにAIを導入する際、以下の問いを確認する。
 
 | 問い | ファセット | 見落とすリスク |
 |---|---|---|

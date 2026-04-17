@@ -15,9 +15,9 @@ import { Aside, Card } from '@astrojs/starlight/components';
 |---|---|---|
 | **導入** | モデルの必要性、できること、読み方 | 全員 |
 | **基礎概念** | 基底モデル、設計属性、モデルの性格 | 全員（最低限ここまで） |
-| **ライフサイクル** | 9段階の定義、L2分解、依存関係 | 設計・適用する人 |
+| **ライフサイクル** | ライフサイクルの定義、L2分解、依存関係 | 設計・適用する人 |
 | **実行設計** | 実行主体、責任主体、RACI、裁量レベル | 設計・適用する人 |
-| **ビュー体系** | 8つのビューの定義と使い方 | 深く理解したい人 |
+| **ビュー体系** | ビューの定義と使い方 | 深く理解したい人 |
 | **動力学** | フロー変数、ボトルネック移動、WIP制限 | 運用・改善に関わる人 |
 | **適用例** | モデルを特定コンテキストに適用した実例 | 実践したい人 |
 | **付録** | 既存フレームワーク、導出過程、用語集 | 背景を知りたい人 |
@@ -36,7 +36,7 @@ import { Aside, Card } from '@astrojs/starlight/components';
 
 <Card title="推奨ルート">
 1. **導入** — [このモデルが目指すこと](/introduction/model-goals/) で全体像を把握
-2. **基礎概念** — [基底モデル](/foundation/base-model/) と [3つの使い方](/foundation/three-modes/) で語彙を押さえる
+2. **基礎概念** — [基底モデル](/foundation/base-model/) と [使い方](/foundation/three-modes/) で語彙を押さえる
 3. **実行設計** — [RACIと裁量レベル](/execution/raci-and-discretion/) で「どこまで任せるか」の設計方法を理解する
 4. **適用例** — [Implementation: 変換モード](/instances/implementation/) で具体的なAI導入設計を見る
 </Card>
@@ -51,8 +51,8 @@ import { Aside, Card } from '@astrojs/starlight/components';
 
 <Card title="推奨ルート">
 1. **導入** — [このモデルが目指すこと](/introduction/model-goals/) と [このモデルでできること](/introduction/what-you-can-do/) で全体像を把握
-2. **基礎概念** — [6つの設計属性](/foundation/design-attributes/) で各段階に何を定義すべきかを理解する
-3. **ライフサイクル** — [9段階のライフサイクル](/lifecycle/nine-stages/) と [依存関係マップ](/lifecycle/dependency-map/) でワークフロー全体を構造化する
+2. **基礎概念** — [設計属性](/foundation/design-attributes/) で各段階に何を定義すべきかを理解する
+3. **ライフサイクル** — [ライフサイクル](/lifecycle/nine-stages/) と [依存関係マップ](/lifecycle/dependency-map/) でワークフロー全体を構造化する
 4. **ビュー体系** — [View 8: As-Is / To-Be / Validation](/views/view-8-asis-tobe/) でAI導入前後の差分設計の方法を学ぶ
 5. **動力学** — [ボトルネック移動の4パターン](/dynamics/bottleneck-patterns/) でAI導入後に起きるボトルネック移動を理解する
 6. **適用例** — 具体的なインスタンスを参考にする
@@ -103,9 +103,9 @@ AIネイティブなソフトウェアエンジニアリングの理論的な基
 | 知りたいこと | 読むべきページ |
 |---|---|
 | モデルの全体像を素早く掴みたい | [このモデルが目指すこと](/introduction/model-goals/) → [このモデルでできること](/introduction/what-you-can-do/) |
-| ライフサイクルの9段階を知りたい | [9段階のライフサイクル](/lifecycle/nine-stages/) |
+| ライフサイクルの段階を知りたい | [ライフサイクル](/lifecycle/nine-stages/) |
 | 「どこまでAIに任せるか」の設計方法を知りたい | [RACIと裁量レベル](/execution/raci-and-discretion/) |
-| ビューとは何かを知りたい | [なぜ複数ビューが必要か](/views/why-multiple-views/) → [8つのビューの概要](/views/overview/) |
+| ビューとは何かを知りたい | [なぜ複数ビューが必要か](/views/why-multiple-views/) → [ビューの概要](/views/overview/) |
 | AI導入前後の差分を設計したい | [View 8: As-Is / To-Be / Validation](/views/view-8-asis-tobe/) |
 | ボトルネックがAI導入でどう動くか知りたい | [ボトルネック移動の4パターン](/dynamics/bottleneck-patterns/) |
 | 具体的な適用例を見たい | [適用例の読み方](/instances/how-to-read/) |

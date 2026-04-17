@@ -15,13 +15,13 @@ import { Aside } from '@astrojs/starlight/components';
 
 | 強い点 | 根拠 |
 |---|---|
-| ライフサイクル + 設計属性 + ビューの3層構造が定義されている | [基底モデル](/foundation/base-model/) + [8つのビュー](/views/overview/) |
+| ライフサイクル + 設計属性 + ビューの構造が定義されている | [基底モデル](/foundation/base-model/) + [ビューの概要](/views/overview/) |
 | L2の分解・停止原則が明示されている | [L2分解の原則](/appendix/l2-principles/) |
-| テーラリングの余地が設計に組み込まれている | 参照モデルとしての性格。[モデルの性格と3つの使い方](/foundation/three-modes/) |
+| テーラリングの余地が設計に組み込まれている | 参照モデルとしての性格。[モデルの性格と使い方](/foundation/three-modes/) |
 | 理論的基盤が明示されている | [既存フレームワークの全体像](/appendix/existing-landscape/)と[導出過程](/appendix/derivation-process/) |
 | 具体的な適用例がある | [Implementation](/instances/implementation/)と[Verification & Review](/instances/verification-review/)の変換モードインスタンス |
 | 動力学の概念枠組みがある | [ボトルネック移動パターン](/dynamics/bottleneck-patterns/)、[フロー変数](/dynamics/flow-variables/) |
-| AIの多面性が整理されている | [4ファセット](/execution/ai-four-facets/)（Executor / Evaluator / Transformer / Mediator） |
+| AIの多面性が整理されている | [AIの多面性](/execution/ai-four-facets/)（Executor / Evaluator / Transformer / Mediator） |
 
 ## 対処済みの問題
 
@@ -32,9 +32,9 @@ import { Aside } from '@astrojs/starlight/components';
 | 概念の導出過程が書かれていない | [概念の導出過程](/appendix/derivation-process/)として記録 |
 | 依存関係の型が未明示 | [依存関係ビュー](/views/view-4-dependency/)で4型を定義 |
 | L2の分解基準が不明 | [L2分解の原則](/appendix/l2-principles/)で分割・停止原則を定義 |
-| ビューの定義が曖昧 | [8つのビュー](/views/overview/)でメタ定義（7項目）を整備 |
-| 記述モデルと処方モデルの混在 | [モデルの性格と3つの使い方](/foundation/three-modes/)で3つのモードを定義 |
-| AIを実行主体としてのみ見る危険 | [AIの4ファセット](/execution/ai-four-facets/)で多面性を整理 |
+| ビューの定義が曖昧 | [ビューの概要](/views/overview/)でメタ定義を整備 |
+| 記述モデルと処方モデルの混在 | [モデルの性格と使い方](/foundation/three-modes/)でモードを定義 |
+| AIを実行主体としてのみ見る危険 | [AIの多面性](/execution/ai-four-facets/)でファセットを整理 |
 | 動力学モデルが未着手 | [動力学セクション](/dynamics/why-dynamics/)で概念枠組みを定義 |
 
 ## 残存する問題

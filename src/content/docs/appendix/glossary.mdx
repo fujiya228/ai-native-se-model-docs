@@ -29,10 +29,10 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### Lifecycle Step（ライフサイクルステップ）
 
-- **採用定義**: 時間軸上の段階。L1として9段階を定義し、必要に応じてL2に分解する
+- **採用定義**: 時間軸上の段階。L1としてライフサイクルを定義し、必要に応じてL2に分解する
 - **区別する語**: Phase（フェーズ）— 本モデルでは「ステップ」を使う。Phase はウォーターフォール的な区切りを連想させるため
 - **使わない語**: 工程（製造業的ニュアンスが強い）
-- **参照**: [9段階のライフサイクル](/lifecycle/nine-stages/)
+- **参照**: [ライフサイクル](/lifecycle/nine-stages/)
 
 ### Actor（主体 / 実行主体）
 
@@ -95,25 +95,25 @@ import { Aside } from '@astrojs/starlight/components';
 
 - **採用定義**: 仕事の状態を直接前進させるAIの顔。コード生成、テスト作成等
 - **区別する語**: Evaluator — Executor は「実行する」、Evaluator は「判定する」。同じLLMが両方を兼ねる場合は分離が推奨される
-- **参照**: [AIの多面性: 4つのファセット](/execution/ai-four-facets/)
+- **参照**: [AIの多面性](/execution/ai-four-facets/)
 
 ### Evaluator（評価者）
 
 - **採用定義**: 仕事の品質・正しさを判定するAIの顔。AIコードレビュー、LLM-as-judge等
 - **区別する語**: Executor — Evaluator は実行せずに判定する。Control + Metric の両面を持つ
-- **参照**: [AIの多面性: 4つのファセット](/execution/ai-four-facets/)
+- **参照**: [AIの多面性](/execution/ai-four-facets/)
 
 ### Transformer（変容者）
 
 - **採用定義**: 仕事の構造・粒度・流れ方を変えるAIの顔。意図的に設計するものではなく、Executor や Evaluator の導入の**結果として生じる**構造変化
 - **区別する語**: Executor — Executor は直接的な効果、Transformer は間接的な副作用（ボトルネック移動等）
-- **参照**: [AIの多面性: 4つのファセット](/execution/ai-four-facets/)
+- **参照**: [AIの多面性](/execution/ai-four-facets/)
 
 ### Mediator（媒介者）
 
 - **採用定義**: 仕事の入出力のかたちを変えるAIの顔。PR要約の自動生成、ルールファイルの解釈等
 - **区別する語**: Artifact — Mediator は Artifact の生成・消費パターンを変える役割であり、Artifact そのものではない
-- **参照**: [AIの多面性: 4つのファセット](/execution/ai-four-facets/)
+- **参照**: [AIの多面性](/execution/ai-four-facets/)
 
 ---
 
@@ -164,9 +164,9 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### ビュー（View）
 
-- **採用定義**: 基底モデルを特定の関心事から投影したもの。8つのビューを定義: ライフサイクル、実行設計、アーティファクト、依存関係、制御環境、レイヤー、測定、As-Is/To-Be
+- **採用定義**: 基底モデルを特定の関心事から投影したもの。ライフサイクル、実行設計、アーティファクト、依存関係、制御環境、レイヤー、測定、As-Is/To-Be のビューを定義
 - **区別する語**: ダイアグラム — ビューは「関心事の投影」であり、特定の図表形式ではない
-- **参照**: [8つのビューの概要](/views/overview/)
+- **参照**: [ビューの概要](/views/overview/)
 
 ### インスタンス（適用例）
 

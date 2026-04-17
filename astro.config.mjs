@@ -99,15 +99,15 @@ export default defineConfig({
 					label: '基礎概念',
 					items: [
 						{ label: '基底モデル', slug: 'foundation/base-model' },
-						{ label: '6つの設計属性', slug: 'foundation/design-attributes' },
+						{ label: '設計属性', slug: 'foundation/design-attributes' },
 						{ label: 'モデルの性格', slug: 'foundation/model-character' },
-						{ label: '3つの使い方', slug: 'foundation/three-modes' },
+						{ label: '使い方', slug: 'foundation/three-modes' },
 					],
 				},
 				{
 					label: 'ライフサイクル',
 					items: [
-						{ label: '9段階のライフサイクル', slug: 'lifecycle/nine-stages' },
+						{ label: 'ライフサイクル', slug: 'lifecycle/nine-stages' },
 						{ label: 'L2分解表', slug: 'lifecycle/l2-decomposition' },
 						{ label: '依存関係マップ', slug: 'lifecycle/dependency-map' },
 					],
@@ -124,7 +124,7 @@ export default defineConfig({
 					label: 'ビュー体系',
 					items: [
 						{ label: 'なぜ複数ビューが必要か', slug: 'views/why-multiple-views' },
-						{ label: '8つのビューの概要', slug: 'views/overview' },
+						{ label: 'ビューの概要', slug: 'views/overview' },
 						{ label: 'View 1: ライフサイクルビュー', slug: 'views/view-1-lifecycle' },
 						{ label: 'View 2: 実行設計ビュー', slug: 'views/view-2-execution' },
 						{ label: 'View 3: アーティファクト＆受け渡しビュー', slug: 'views/view-3-artifact' },

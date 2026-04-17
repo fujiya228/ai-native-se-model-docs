@@ -99,7 +99,7 @@ export default defineConfig({
 					label: '基礎概念',
 					items: [
 						{ label: '基底モデル', slug: 'foundation/base-model' },
-						{ label: '設計属性', slug: 'foundation/design-attributes' },
+						{ label: 'ステップ構成', slug: 'foundation/design-attributes' },
 						{ label: 'モデルの性格', slug: 'foundation/model-character' },
 						{ label: '使い方', slug: 'foundation/three-modes' },
 					],

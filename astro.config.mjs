@@ -90,6 +90,7 @@ export default defineConfig({
 					label: '導入',
 					items: [
 						{ label: 'このモデルが目指すこと', slug: 'introduction/model-goals' },
+						{ label: 'モデルの全体像', slug: 'introduction/model-overview' },
 						{ label: 'このモデルでできること', slug: 'introduction/what-you-can-do' },
 						{ label: '読み方ガイド', slug: 'introduction/reading-guide' },
 					],

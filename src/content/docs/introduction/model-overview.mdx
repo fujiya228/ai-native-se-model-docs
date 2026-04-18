@@ -5,26 +5,23 @@ sidebar:
   order: 2
 ---
 
-import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
+import { Aside, Card } from '@astrojs/starlight/components';
 
 ## 構成要素
 
 本モデルは、既存の枠組みの知見に[AIエージェントがもたらす変化](/introduction/model-goals/#aiエージェントによって変わること)への対応を加え、**AIエージェントを前提としたワークフロー設計の枠組みとして体系化した参照モデル**である。
 
-<CardGrid>
-  <Card title="ライフサイクル（主軸）" icon="list-format">
-    ソフトウェア開発の仕事の流れをステップとして整理する。SDLCやDevOpsと整合する参照形であり、AIエージェントが関与する粒度まで分解する方針をとる。
-  </Card>
-  <Card title="ステップ構成" icon="setting">
-    各段階に「誰が実行するか」「何を介して流れるか」「何が安全性を支えるか」「何を測るか」といった構成を重ねる。
-  </Card>
-  <Card title="ビュー" icon="open-book">
-    単一の図では表現しきれない仕事の多面性を、目的別のビューに分けて可視化する。
-  </Card>
-  <Card title="テーラリング" icon="pencil">
-    モデルが固定するのは語彙と構造だけである。中身はチーム・組織が自分たちのコンテキストに合わせて埋める。
-  </Card>
-</CardGrid>
+<Card title="ライフサイクル（主軸）" icon="list-format">
+  ソフトウェア開発の仕事の流れをステップとして整理する。SDLCやDevOpsと整合する参照形であり、AIエージェントが関与する粒度まで分解する方針をとる。
+</Card>
+
+<Card title="ステップ構成" icon="setting">
+  各ステップに「誰が実行するか」「何を介して流れるか」「何が安全性を支えるか」「何を測るか」といった構成を重ねる。
+</Card>
+
+<Card title="ビュー" icon="open-book">
+  単一の図では表現しきれない仕事の多面性を、目的別のビューに分けて可視化する。
+</Card>
 
 <Aside type="tip">
 各構成要素が組み込んだ既存の知見（SDLC, RACI, DORA 等）との対応は[既存フレームワークの全体像](/appendix/existing-landscape/)で解説している。

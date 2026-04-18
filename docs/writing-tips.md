@@ -81,14 +81,14 @@
 
 - model-goals = Why（なぜ必要か）
 - model-overview = What（何であるか）
-- what-you-can-do = How（どう使うか）
+- how-to-use = How（どう使うか）
 - reading-guide = Where（どこから読むか）
 
 ### ページ間で情報を重複させない
 
 同じ内容が複数のページに書かれていると、更新漏れが起きる。情報は1箇所に集約し、他のページからはリンクで参照する。
 
-- テーラリングの詳細 → model-overview に集約（what-you-can-do からは除去）
+- テーラリングの詳細 → model-overview に集約（how-to-use からは除去）
 - ペルソナ別ルート → reading-guide に集約（index からはリンクで誘導）
 
 ### 補足的なセクションは本来の居場所に置く

@@ -91,7 +91,7 @@ export default defineConfig({
 					items: [
 						{ label: 'このモデルが目指すこと', slug: 'introduction/model-goals' },
 						{ label: 'モデルの全体像', slug: 'introduction/model-overview' },
-						{ label: 'このモデルでできること', slug: 'introduction/what-you-can-do' },
+						{ label: 'このモデルの使い方', slug: 'introduction/how-to-use' },
 						{ label: '読み方ガイド', slug: 'introduction/reading-guide' },
 					],
 				},

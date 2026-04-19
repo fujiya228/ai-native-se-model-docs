@@ -44,7 +44,7 @@ import { Aside } from '@astrojs/starlight/components';
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'lineColor': '#6b7280', 'edgeLabelBackground': '#ffffff'}}}%%
 graph TB
-    BASE["基底モデル（7要素）"]:::neutral
+    BASE["基底モデル"]:::neutral
 
     V1["View 1<br/>ライフサイクル"]:::tobe
     V2["View 2<br/>実行設計"]:::tobe
@@ -71,7 +71,7 @@ graph TB
     classDef neutral fill:#f9fafb,stroke:#6b7280,color:#1f2937
 ```
 
-各ビューは独立して使えるが、共通の基底モデル（7要素）と共通のID体系（`L1名.L2名`）を通じて相互に参照できる。
+各ビューは独立して使えるが、共通の基底モデルと共通のID体系（`L1名.L2名`）を通じて相互に参照できる。
 
 <Aside type="tip">
 ビューすべてを一度に定義する必要はない。まずライフサイクルビュー、実行設計ビュー、依存関係ビューから始めるのが推奨される。詳しくは[ビューの概要](/views/overview/)を参照。

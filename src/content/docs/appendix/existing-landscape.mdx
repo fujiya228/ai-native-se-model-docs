@@ -104,8 +104,8 @@ OMG（Object Management Group）が管理する国際標準（ISO 19510）。業
 |---|---|---|---|
 | APQC PCF | 分類体系 | 業務プロセスの階層的分類 | [L2分解の原則](/appendix/l2-principles/)の設計参考。L0 / L1 / L2 の多段階粒度設計に活用 |
 | Process Mining | 発見手法 | イベントログから実際の流れを再構成 | [As-Is / To-Be ビュー](/views/view-8-asis-tobe/)の Validation 面の発想 |
-| Coordination Theory | 分析理論 | 活動間の依存関係と調整メカニズムの学術的分析 | [依存関係ビュー](/views/view-4-dependency/)の4つの型、[動力学](/dynamics/theoretical-foundations/)の理論的基盤 |
-| Activity Theory / STS | 分析理論 | 主体・道具・ルール・分業の関係で人間活動を捉える理論 | [Actor の定義](/execution/actor-and-responsibility/)と[AIの4ファセット](/execution/ai-four-facets/)の理論的根拠 |
+| Coordination Theory | 分析理論 | 活動間の依存関係と調整メカニズムの学術的分析 | [依存関係ビュー](/views/view-4-dependency/)の型分類、[動力学](/dynamics/theoretical-foundations/)の理論的基盤 |
+| Activity Theory / STS | 分析理論 | 主体・道具・ルール・分業の関係で人間活動を捉える理論 | [Actor の定義](/execution/actor-and-responsibility/)と[AI のファセット分類](/execution/ai-four-facets/)の理論的根拠 |
 
 <Aside type="caution">
 APQC PCF は「流れを捉える」フレームワークではなく「仕事を分類する」体系。Coordination Theory / Activity Theory は学術的な分析理論であり、Scrum や DevOps のような実務テンプレートとは性質が異なる。これらを同列に「フレームワーク」と呼ぶと議論が噛み合わなくなる。
@@ -131,7 +131,7 @@ SDLC は開発フェーズの共通語彙。ISO/IEC/IEEE 12207 は30プロセス
 |---|---|
 | 開発の全体像を関係者で揃えられる | 実行主体の設計（人 vs AI）は扱わない |
 | ISO 12207 はテーラリング可能 | 裁量レベルの概念はない |
-| EU AI Act 等の規制が参照を加速 | AI前提の粒度分解は不足 |
+| EU AI Act 等の規制が参照を加速 | AIエージェントを前提とした粒度分解は不足 |
 
 <Aside>
 ISO/IEC/IEEE 12207 は本モデルに最も近い既存標準である。テーラリング可能な参照モデルという思想が共通する。両者の差分は「実行主体の設計」「裁量レベル」「多視点ビュー」にある。
@@ -210,9 +210,9 @@ Mik Kersten 提唱。4つのフローアイテム（Features, Defects, Risks, De
 | **裁量レベルの設計** | 「全部任せる/任せない」ではなく、段階的に委譲度を設計する必要がある |
 | **複数の観点からの統合的な可視化** | 流れ・依存・制御・測定を統合的に捉える必要がある |
 
-### マッピング: 既存枠組み × 4つの観点
+### マッピング: 既存枠組み × 本モデルの観点
 
-各枠組みが上記4つの観点にどこまで対応するかを整理する。
+各枠組みが上記観点にどこまで対応するかを整理する。
 
 | 枠組み | 時間軸の構造化 | 実行/責任主体の分離 | 裁量レベルの設計 | 複数観点の統合 |
 |---|---|---|---|---|
@@ -233,7 +233,7 @@ Mik Kersten 提唱。4つのフローアイテム（Features, Defects, Risks, De
 
 **凡例:** ◎ 主目的として扱う / ○ 部分的に扱う / △ 関連する視点はあるが不十分 / × 扱わない
 
-この表が示すのは、個々の枠組みはそれぞれの目的に対して機能するが、AI時代に必要な4つの観点を揃えた枠組みはまだ存在しないということである。
+この表が示すのは、個々の枠組みはそれぞれの目的に対して機能するが、AI時代に必要な観点を揃えた枠組みはまだ存在しないということである。
 
 ---
 
@@ -243,7 +243,7 @@ Mik Kersten 提唱。4つのフローアイテム（Features, Defects, Risks, De
 
 | 構成要素 | 組み込んだ既存の知見 | 新たに加えた観点 |
 |---|---|---|
-| ライフサイクル + L2分解 | SDLC, ISO 12207 | AI前提の粒度分解 |
+| ライフサイクル + L2分解 | SDLC, ISO 12207 | AIエージェントを前提とした粒度分解 |
 | ステップ構成 | RACI, VSM, DORA, Coordination Theory | 実行主体/責任主体の分離、制御環境・測定を各段階に重ねる |
 | ビュー | 4+1 View Model, Team Topologies | 共通の基底モデルから目的別に投影 |
 | テーラリング | ISO 12207 | 語彙と構造だけを固定し、中身はコンテキストに応じて埋める |
@@ -257,7 +257,7 @@ Mik Kersten 提唱。4つのフローアイテム（Features, Defects, Risks, De
 | 単一のフレームワークでは足りない | [複数ビュー](/views/why-multiple-views/)で投影する構造を採用 |
 | ライフサイクルだけでは不十分 | ライフサイクルを主軸にしつつ、ステップ構成を重ねる構造を採用 |
 | 要素だけでなく関係と動力学が必要 | [依存関係ビュー](/views/view-4-dependency/)と[動力学セクション](/dynamics/why-dynamics/)を追加 |
-| 理想図だけでは不十分 | [As-Is / To-Be / Validation](/views/view-8-asis-tobe/) の3面構成を採用 |
+| 理想図だけでは不十分 | [As-Is / To-Be / Validation](/views/view-8-asis-tobe/) の比較構成を採用 |
 
 <Aside>
 これらの教訓の詳細な検討過程は[概念の導出過程](/appendix/derivation-process/)で解説している。

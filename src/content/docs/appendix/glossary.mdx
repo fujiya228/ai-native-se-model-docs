@@ -19,7 +19,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 ---
 
-## 基底モデルの7要素
+## 基底モデルの要素
 
 ### Object（対象）
 
@@ -49,7 +49,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### Dependency（依存）
 
-- **採用定義**: 何が何に依存しているかの関係。4つの型がある: Producer-Consumer、Gate、Shared Resource、Synchronization
+- **採用定義**: 何が何に依存しているかの関係。型として以下がある: Producer-Consumer、Gate、Shared Resource、Synchronization
 - **区別する語**: Prerequisite（前提条件）— Dependency は双方向の関係概念、Prerequisite は一方向の条件
 - **参照**: [依存関係ビュー](/views/view-4-dependency/)
 
@@ -77,7 +77,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### 裁量レベル（L0〜L4）
 
-- **採用定義**: AIや自動化への委譲の程度を5段階で表す。L0（提案のみ）〜 L4（継続自律実行 + 監視/ポリシー制御）
+- **採用定義**: AIや自動化への委譲の程度を段階で表す。L0（提案のみ）〜 L4（継続自律実行 + 監視/ポリシー制御）
 - **区別する語**: 自律度（Autonomy Level）— 裁量レベルは「AIの賢さ」ではなく「人がどこで関与するか」の設計
 - **参照**: [RACIと裁量レベル](/execution/raci-and-discretion/)
 
@@ -89,7 +89,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 ---
 
-## AIの4ファセット
+## AI のファセット
 
 ### Executor（実行者）
 
@@ -155,7 +155,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### フロー変数
 
-- **採用定義**: ライフサイクルのフローを記述する7つの変数。スループット（λ）、タッチタイム、待ち時間、リードタイム、WIP、キュー長、差し戻し率
+- **採用定義**: ライフサイクルのフローを記述する変数。スループット（λ）、タッチタイム、待ち時間、リードタイム、WIP、キュー長、差し戻し率
 - **参照**: [フロー変数と測定](/dynamics/flow-variables/)
 
 ---

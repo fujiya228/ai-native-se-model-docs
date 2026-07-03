@@ -36,6 +36,10 @@ import { Aside } from '@astrojs/starlight/components';
 | 記述モデルと処方モデルの混在 | [モデルの性格](/foundation/model-character/)と[このモデルの使い方](/introduction/how-to-use/)でアプローチを定義 |
 | AIを実行主体としてのみ見る危険 | [AIの多面性](/execution/ai-four-facets/)でファセットを整理 |
 | 動力学モデルが未着手 | [動力学セクション](/dynamics/why-dynamics/)で概念枠組みを定義 |
+| 指示・セッション文脈が媒介物として扱われていない | [基底モデル](/foundation/base-model/#指示セッション文脈も媒介物である)で委譲契約として機能する媒介物と位置づけ |
+| 責任主体の割り当てだけでは責任が形式化するリスク | [実行主体と責任主体](/execution/actor-and-responsibility/#責任の実効性)で実効性の維持を設計変数として定義 |
+| ステップ単位の設計とゴール単位の委譲の緊張が未記述 | [RACIと裁量レベル](/execution/raci-and-discretion/#ステップ単位の設計とゴール単位の委譲)で両者の関係を整理 |
+| 中核概念にたどり着くまでの導線が重い | [読み方ガイド](/introduction/reading-guide/#中核概念への最短ルート)で最短ルートを提示 |
 
 ## 残存する問題
 
@@ -74,6 +78,14 @@ Implementation と Verification & Review の変換モードインスタンスは
 ### 定量的シミュレーション
 
 [動力学セクション](/dynamics/why-dynamics/)は概念枠組みと分析パターンを提供するが、離散イベントシミュレーション等による定量分析はv2以降の課題。
+
+### 責任の実効性をどう観測するか
+
+[実行主体と責任主体](/execution/actor-and-responsibility/#責任の実効性)で、実効性は承認が差し戻しに転じるかといった振る舞いでしか観測できないと述べたが、それを指標としてどう定義するかは未着手。[測定ビュー](/views/view-7-measurement/)の指標セットと合わせて扱う必要がある。
+
+### 指示・セッション文脈の記録の標準形式
+
+[基底モデル](/foundation/base-model/#指示セッション文脈も媒介物である)で指示・セッション文脈を管理対象になりうる媒介物と位置づけたが、何をどこまで記録するかの標準形式やテンプレートは未定義。
 
 ## 今後の方向性
 

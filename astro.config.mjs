@@ -25,10 +25,9 @@ export default defineConfig({
 		starlight({
 			title: 'AI-Native SE Model',
 			plugins: [
-				// Note: starlight-links-validator は base パス（/ai-native-se-model-docs）設定時に
-				// 内部リンクを誤検知するため、base パスの非互換が解消されるまで無効化。
-				// 参照: https://github.com/fujiya228/ai-native-se-model-docs/issues/29
-				// starlightLinksValidator(),
+				// ビルド時に内部リンク切れを検出する。rehype-base-links が付与する
+				// base パス込みのリンクも正しく検証される（issues/29 の誤検知は現行構成では再現しない）。
+				starlightLinksValidator(),
 			],
 			locales: {
 				root: { label: '日本語', lang: 'ja' },

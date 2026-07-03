@@ -16,7 +16,7 @@ export default defineConfig({
 	},
 	integrations: [
 		mermaid({
-			// CLAUDE.md のカラーテーマ規約で %%{init}%% により base テーマを指定するため、
+			// 各図は %%{init}%% で base テーマ前提の配色（themeVariables）を指定しているため、
 			// デフォルトテーマは base にしておく
 			theme: 'base',
 			// Starlight のダーク/ライトモード切替に対応
